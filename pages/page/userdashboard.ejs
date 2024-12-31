@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        h1{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <%- include("./header") %>
+   
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">User Details</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/uploads/<%=user.mypic%>" height="100px"  alt="">
+                          
+                            <h5 class="card-title"><%=user.name%></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"></h6>
+                            <p class="card-text">
+                                <strong>E-Mail:</strong> <%=user.email%><br>
+                                <strong>Phone Number:</strong> <%=user.phone%><br>
+                                <strong>Age:</strong> <%=user.age%><br>
+                                <strong>City:</strong><%=user.city%><br>
+                                <strong>Password:</strong> <%=user.password%>
+                            </p>
+                            <!-- <a href="#" class="btn btn-secondary">Back to All Users</a> -->
+                            <a href="/newuserLogout" class="btn btn-secondary">Logout</a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

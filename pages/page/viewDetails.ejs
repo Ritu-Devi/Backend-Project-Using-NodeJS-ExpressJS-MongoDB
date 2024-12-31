@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #page-wrapper {
+            margin-top: 50px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            border-radius: 12px;
+            object-fit: cover;
+            width: 50%;
+            height: 300px;
+            border: 2px solid blue;
+        }
+
+        .card-body {
+            padding: 3rem;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .card-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .card-subtitle {
+            font-size: 1.2rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color:b;
+            margin-top: 20px;
+        }
+
+        .btn-secondary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+
+        /* Header style */
+        .page-head-line {
+            font-size: 2.5rem;
+            color: #007bff;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card img {
+                height: 100px;
+            }
+
+            .card-body {
+                padding: 2rem;
+            }
+
+            .card-title {
+                font-size: 1.7rem;
+            }
+
+            .card-subtitle {
+                font-size: 1rem;
+            }
+
+            .card-text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <%- include("./header") %>
+
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line text-center">Room Details</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Room Image -->
+                            <img src="/roomUploads/<%= rooms.roompic %>" alt="Room Image">
+
+                            <!-- Room Information -->
+                            <h5 class="card-title"><%= rooms.name %></h5>
+                            <h6 class="card-subtitle mb-2"><%= rooms.bed %></h6>
+                            <p class="card-text">
+                                <strong>Bath:</strong> <%= rooms.bath %> <br>
+                                <strong>Price:</strong> $<%= rooms.price %> <br>
+                                <strong>Description:</strong> <%= rooms.description %>
+                            </p>
+
+                            <!-- Back Button -->
+                            <a href="/booking/<%=rooms._id%>" class="btn btn-secondary">Hotels</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("./newsletter") %>
+    <%- include("./footer") %>
+
+</body>
+
+</html>
